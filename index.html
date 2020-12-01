@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Iconos -->
+    <!-- Fuentes -->
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <!-- Css -->
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/media1Sm.css">
+    <link rel="stylesheet" href="css/media2Sm.css">
+    <link rel="stylesheet" href="css/media3Sm.css">
+    <link rel="stylesheet" href="css/media4Sm.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/simplex/bootstrap.min.css" integrity="sha384-FYrl2Nk72fpV6+l3Bymt1zZhnQFK75ipDqPXK0sOR0f/zeOSZ45/tKlsKucQyjSp" crossorigin="anonymous">
+
+    <title>Captcha-Accesible</title>
+
+</head>
+<body>
+   <div class="padre text-center row border border-success rounded col-5 mx-auto gradiente">
+
+    <form action="./gracias.html" method="GET" target="_blank" id="formulario"class="col-12" >
+        <div class="card text-white bg-success mb-3 mx-auto" style="max-width: 20rem;">
+            <div class="card-header">Visualiza el numero</div>
+            <div class="card-body">
+                <div id="numero" class="text-center">
+            </div>
+          </div>
+        
+    
+        </div>
+        <div class="col-12">
+          
+          <input id="rangoActual" type="range" aria-label="buscar el rango" name="nivelcafeina" list="listanivelescafeina" min="-0" max="10">
+          
+        </div>
+      </form>
+      <datalist id="listanivelescafeina">
+        <option value="0" value="Alerta!">
+        <option value="10" value="Bajo" label="100%">
+        
+      </datalist>
+    
+    
+      <div class="col-12">
+       
+            <h1 class="text-success">CAPTCHA-ACCESIBLE</h1>
+        
+            <label for="voces" class="text-success">Selecciona el idioma:</label>
+            <br>
+                <select id="voces" class="">
+                </select>
+                <br>
+                <br>
+                
+                <div id="numero">
+    
+                </div>
+                     
+      </div>
+
+      
+    
+    
+    </div>   
+       
+        
+      
+      
+      <!-- SCRIPTS -->
+      
+      <!-- BOOTSTRAP -->
+    <script src="./js/capchaVos.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/focoAccesible.js"></script>
+</body>
+</html>
