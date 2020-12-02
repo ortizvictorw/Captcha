@@ -30,15 +30,17 @@ document.addEventListener("DOMContentLoaded", () => {
      
     document.querySelector("#rangoActual").addEventListener('change',function(e){
         function escuchar(){
-            if(e.target.value==6){
+            
+            
+            if(e.target.value==2 ){
                 setTimeout(function(){ document.getElementById('formulario').submit() }, 6000);
                     
-                return ` estas en 6, has resuelto el captcha, espera unos segundos para la redireccion`
-            }else if(e.target.value==5){
-                return ` estas en 5, sumale 1`
+                return ` estas en 2, has resuelto el captcha, espera unos segundos para la redireccion`
+            }else if(e.target.value==1){
+                return ` estas en 1, sumale 1`
             }
-            else if(e.target.value==7){
-                return `estas en 7, restale 1`
+            else if(e.target.value==3){
+                return `estas en 3, restale 1`
             }
 
             else{
@@ -92,8 +94,11 @@ document.addEventListener("DOMContentLoaded", () => {
       const opcion = document.createElement("option");
       opcion.value = indice;
       opcion.innerHTML = voz.name;
-      opcion.selected = indice === posibleIndice;
+      opcion.selected = indice === posibleIndice ;
       $voces.appendChild(opcion);
+      
+      
+      
     });
   };
 
