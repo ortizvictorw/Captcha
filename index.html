@@ -23,16 +23,19 @@
     <form action="./gracias.html" method="GET" id="formulario"class="col-12 col-md-11 my-0 mx-auto" >
         <fieldset class="row">
             <div class="form-group col-md-12">
+                <label for="nombres" class="my-0">Nombre y Apellido</label>
               <input aria-label="nombres" type="text" name="nombres" class="form-control nombres-Contact" id="nombres" placeholder="Nombre" required>
-              <div id="errorNombre" class="form-group" ></div>
+              <div id="errorNombre" class="form-group py-0" ></div>
             </div>
             <div class="form-group col-md-12">
-              <input aria-label="email" type="email" name="email" class="form-control email-Contact" id="email" placeholder="Email" required>
-              <div id="errorEmail" class="form-group" ></div>
+                <label for="email" class="my-0" >Correo Electrónico</label>
+              <input  type="email" name="email" class="form-control email-Contact" id="email" placeholder="Email" required>
+              <div id="errorEmail" class="form-group py-0" ></div>
             </div>
             <div class="form-group col-md-12">
+                <label for="mensaje" class="my-0">Mensaje</label>
               <textarea aria-label="mensaje" rows="6" name="mensaje" class="form-control mensaje-Contact" id="mensaje" placeholder="Tu mensaje" value="" required></textarea>
-              <div id="errorMensaje" class="form-group" ></div>
+              <div id="errorMensaje" class="form-group py-0" ></div>
             </div>
            
           </fieldset>

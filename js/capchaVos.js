@@ -1,26 +1,4 @@
-/**
- * 
- * Texto a voz con JavaScript usando speechSynthesis
- * [TTS con JS]
- * @author parzibyte
- * 
- * Visita: parzibyte.me/blog
- */
 
-        
-
-
-
-     
-    
-/**
- * 
- * Texto a voz con JavaScript usando speechSynthesis
- * [TTS con JS]
- * @author parzibyte
- * 
- * Visita: parzibyte.me/blog
- */
 // Seleccionar estos idiomas por defecto, en caso de que existan
 const IDIOMAS_PREFERIDOS = ["es-MX", "es-US", "es-ES", "es_US", "es_ES"];
 
@@ -30,17 +8,39 @@ document.addEventListener("DOMContentLoaded", () => {
      
     document.querySelector("#rangoActual").addEventListener('change',function(e){
         function escuchar(){
-            
-            
-            if(e.target.value==2 ){
-                setTimeout(function(){ document.getElementById('formulario').submit() }, 6000);
+            clock = new Date() 
+            valorCaptchaString = clock.getMinutes().toString()[1]
+            valorCaptcha= clock.getMinutes().toString()[1]
+            valorCaptchaInt=parseInt(valorCaptcha, 10)
+
+            valorcaptchaIntnMenos=valorCaptchaInt-1
+            StringMeno=valorcaptchaIntnMenos.toString()
+
+            valorcaptchaIntnMas=valorCaptchaInt+1
+            StringMas=valorcaptchaIntnMas.toString()
+
+
+           
+            /* console.log(valorCaptchaString)
+            console.log(valorCaptchaInt) */
+
+            if(e.target.value==valorCaptchaInt){
+                setTimeout(function(){ 
                     
-                return ` estas en 2, has resuelto el captcha, espera unos segundos para la redireccion`
-            }else if(e.target.value==1){
-                return ` estas en 1, sumale 1`
-            }
-            else if(e.target.value==3){
-                return `estas en 3, restale 1`
+                     document.getElementById('formulario').submit() 
+            
+                }, 6000);
+                    
+                return ` estas en ${valorCaptchaString}, has resuelto el captcha, espera unos segundos para la redireccion`
+
+            }else if(e.target.value==valorCaptchaInt-1){
+               
+                    return ` estas en ${StringMeno}, sumale 1`
+        
+                
+        }
+            else if(e.target.value==valorCaptchaInt+1){
+                return `estas en ${StringMas}, restale 1`
             }
 
             else{
@@ -69,12 +69,11 @@ document.addEventListener("DOMContentLoaded", () => {
             }else{
                 arary =""
             } 
-            
-        console.log (e.target.value) 
+       
         })
  
     const $voces = document.querySelector("#voces"),
-    $boton = document.querySelector("#btnEscuchar"),
+    
     $mensaje = document.querySelector("#numero").textContent.toString();
     
     console.log($mensaje)
