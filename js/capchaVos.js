@@ -44,7 +44,7 @@ document.addEventListener("DOMContentLoaded", () => {
             }
 
             else{
-                return `${e.target.value}`
+                return `estas en, ${e.target.value} ,Debes llegar a, ${valorCaptchaString}`
             } 
             
         }
