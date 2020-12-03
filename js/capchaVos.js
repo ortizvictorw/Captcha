@@ -58,7 +58,7 @@ let $mensaje = document.querySelector("#numero")
         let mensaje = new SpeechSynthesisUtterance();
         mensaje.voice = vocesDisponibles[$voces.value];
         mensaje.volume = 1;
-        mensaje.rate = 1;
+        mensaje.rate = 2;
         mensaje.text = textoAEscuchar;
         mensaje.pitch = 1;
         // ¡Parla!
