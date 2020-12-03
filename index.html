@@ -4,22 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Iconos -->
+
     <!-- Fuentes -->
     <link rel="stylesheet" href="css/font-awesome.min.css">
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
     <!-- Css -->
     <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="css/media1Sm.css">
-    <link rel="stylesheet" href="css/media2Sm.css">
-    <link rel="stylesheet" href="css/media3Sm.css">
-    <link rel="stylesheet" href="css/media4Sm.css">
+    
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/litera/bootstrap.min.css" integrity="sha384-enpDwFISL6M3ZGZ50Tjo8m65q06uLVnyvkFO3rsoW0UC15ATBFz3QEhr3hmxpYsn" crossorigin="anonymous">    <title>Captcha-Accesible</title>
 
 </head>
 <body>
    <div class="padre text-center row border border-success rounded col-12 col-md-5 mx-auto gradiente">
 
+            <!-- Formulario  -->
     <form action="./gracias.html" method="GET" id="formulario"class="col-12 col-md-11 my-0 mx-auto" >
         <fieldset class="row">
             <div class="form-group col-md-12">
@@ -42,10 +41,10 @@
         <button id ="enviar" type="button" class="btn btn-success btn-block" data-toggle="modal" data-target="">Submit</button>
       </form>
 
-      <!-- Button trigger modal -->
+            <!-- Button trigger modal -->
 
   
-  <!-- Modal -->
+            <!-- Modal -->
   <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
@@ -55,77 +54,55 @@
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
-        <div class="modal-body">
-            
+
+            <div class="modal-body">
+
+            <!-- Card donde se visualiza el numero donde esta ubicado el input-Rango  -->
                 <div class="card text-white bg-success mb-3 mx-auto" style="max-width: 20rem;">
                     <div class="card-header">Visualiza el numero</div>
                     <div class="card-body">
                         <div id="numero" class="text-center">
                     </div>
                   </div>
-                
-            
+                  
+            <!-- InputRango -->       
                 </div>
+                <div class="col-12">   
+                  <input id="rangoActual" type="range" aria-label="buscar el rango" name="nivelcafeina" list="listanivelescafeina" min="-0" max="12" step="0.5">
+                </div>
+
+                <datalist id="fiel">
+                    <option value="0" value="min">
+                    <option value="12" value="Maximo" label="100%">
+                </datalist>
+            
+            <!-- Selector de Idioma -->
                 <div class="col-12">
-                  
-                  <input id="rangoActual" type="range" aria-label="buscar el rango" name="nivelcafeina" list="listanivelescafeina" min="-0" max="10">
-                  
-                </div>
-                
-             
-        
-        
-              <datalist id="listanivelescafeina">
-                <option value="0" value="Alerta!">
-                <option value="10" value="Bajo" label="100%">
-                
-              </datalist>
-            
-            
-              <div class="col-12">
                
                     <h1 class="text-success">CAPTCHA-ACCESIBLE</h1>
-                
                     <label for="voces" class="text-success ">Selecciona el idioma:</label>
                     <br>
-                        <select id="voces" class="select-css">
-                            
-                        </select>
-                        <br>
-                        <br>
-                        
-                        <div id="numero">
-            
-                        </div>
+                        <select id="voces" class="select-css"></select>
+                    <br>
+                    <br>
+                        <div id="numero"></div>
                              
-              </div>
-        
-              
-            
-            
+                </div>
+ 
             </div>   
         </div>
-        <div class="modal-footer">
-          
-        </div>
+        <div class="modal-footer"></div>
       </div>
     </div>
   </div>
 
-    
-       
-        
-      
-      
-      <!-- SCRIPTS -->
-      
-      <!-- BOOTSTRAP -->
-      <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-    <script src="./js/capchaVos.js"></script>
-    
   
+            <!-- SCRIPTS -->
+            <!-- BOOTSTRAP -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="./js/capchaVos.js"></script>
     <script src="js/validaciones.js"></script>
 </body>
 </html>

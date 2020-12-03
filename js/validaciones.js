@@ -1,105 +1,101 @@
 window.addEventListener('load', function() { 
+/* selectores */
 
-    
+let inputNombre=document.querySelector('.nombres-Contact')
+let inputEmail=document.querySelector('.email-Contact')
+let inputMensaje=document.querySelector('.mensaje-Contact')
+let buttonForm=document.querySelector('#enviar')
+let errorNombre=document.getElementById('errorNombre')
+let errorEmail=document.getElementById('errorEmail')
+let errorMensaje=document.getElementById('errorMensaje')
+let regular = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i;   
 
-    document.querySelector('.nombres-Contact').addEventListener ('change', () => {
+   /* Validador Nombre */
+inputNombre.addEventListener ('change', () => {
     
-        const nombre = document.getElementById('nombres');
-        
-         if (nombre.value.length < 3 || !isNaN(nombre.value) || nombre.value ==='' ) {
-             
-             document.getElementById('errorNombre')
-            .innerHTML = `<button class="errorForm" id="error-nombre-li" role="alert">Formato incorrecto para nombre a ingresado: ${nombre.value} </button>`
-            document.getElementById('error-nombre-li').focus()
+         if (inputNombre.value.length < 3 || 
+                !isNaN(inputNombre.value) || 
+                inputNombre.value ==='' ) {
+            
+            errorNombre.innerHTML = 
+            `<button class="errorForm" id="error-nombre-li" role="alert">
+                Formato incorrecto para nombre a ingresado: ${inputNombre.value} 
+            </button>`
+            errorNombre.focus()
+
          }else{
-            document.getElementById('errorNombre').innerHTML = ``
+            errorNombre.innerHTML = ``
          } 
         })
     
-    document.querySelector('.email-Contact').addEventListener ('change', () => {
+     /*Validar Email  */   
+inputEmail.addEventListener ('change', () => {
+            
+        if (regular.test(inputEmail.value) === false || inputEmail.value ==='') {
         
-    
-        const email = document.querySelector('.email-Contact');
-        const regular = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i;
-    
-        if (regular.test(email.value) === false || email.value ==='') {
         
-        document.getElementById('errorEmail')
-        .innerHTML =`<button class="errorForm" id="error-email-li" role="alert">Formato incorrecto para email a ingresado: ${email.value} </button>`
+        errorEmail.innerHTML =
+        `<button class="errorForm" id="error-email-li" role="alert">
+            Formato incorrecto para email a ingresado: ${inputEmail.value} 
+        </button>`
         
-        document.getElementById('error-email-li').focus()
+        errorEmail.focus()
     
         }else{
-            document.getElementById('errorEmail').innerHTML = ``
-            } 
-        })
-    
-    
-     /*    document.querySelector('.suscribite-Contact').addEventListener ('change', () => {
-        
-    
-            const email = document.querySelector('.suscribite-Contact');
-            const regular = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i;
-        
-            if (regular.test(email.value) === false || email.value ==='') {
-            
-            document.getElementById('errorSuscribite')
-            .innerHTML =`<button class="errorForm" id="error-suscribite-li" role="alert">Formato incorrecto para email a ingresado: ${email.value} </button>`
-            
-            document.getElementById('error-suscribite-li').focus()
-        
-            }else{
-                document.getElementById('errorSuscribite').innerHTML = ``
-                } 
-            }) */
-       
-    
-    document.querySelector('.mensaje-Contact').addEventListener ('change', () => {
-    
-        const mensaje = document.querySelector('.mensaje-Contact');
-        
-            if (mensaje.value.length < 3 ) {
-                document.getElementById('errorMensaje')
-            .innerHTML = `<button class="errorForm" id="error-mensaje-li" role="alert">Por favor comuniquenos el motivo de su contacto, Gracias !!</button>`
-            document.getElementById('error-mensaje-li').focus()
-            }else{
-            document.getElementById('errorMensaje').innerHTML = ``
+            errorEmail.innerHTML = ``
             } 
         })
 
-        document.querySelector('#enviar').addEventListener ('click', () => {
-           
-            const nombre = document.getElementById('nombres')
-            const email = document.getElementById('email')
-            const regular = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i;
-            const mensaje = document.getElementById('mensaje')
-           
+     /* Validar TextArea Mensaje */  
+inputMensaje.addEventListener ('change', () => {
+            if (inputMensaje.value.length < 3 ) {
 
-            if(mensaje.value.length < 3){
-                console.log('mensaje')
-                document.getElementById('errorMensaje')
-                .innerHTML = `<button class="errorForm" id="error-mensaje-li" role="alert">Por favor comuniquenos el motivo de su contacto, Gracias !!</button>`
-                document.querySelector('#enviar').getAttribute("data-target")
-                document.querySelector('#enviar').setAttribute("data-target", "#")
+            errorMensaje.innerHTML = 
+            `<button class="errorForm" id="error-mensaje-li" role="alert">
+                Por favor comuniquenos el motivo de su contacto, Gracias !!
+            </button>`
+            errorMensaje.focus()
+            
+            }else{
+            errorMensaje.innerHTML = ``
+            } 
+        })
 
-            }else if(regular.test(email.value) === false ){
-                console.log('email')
-                document.getElementById('errorEmail')
-            .innerHTML =`<button class="errorForm" id="error-email-li" role="alert">Formato incorrecto para email a ingresado: ${email.value} </button>`
-            document.querySelector('#enviar').getAttribute("data-target")
-            document.querySelector('#enviar').setAttribute("data-target", "")
+        /* Validar Datos para ingresar al modal */
+buttonForm.addEventListener ('click', () => {
 
-            }else if(nombre.value.length < 3 ){
-                console.log('nombre')
-                document.getElementById('errorNombre')
-            .innerHTML = `<button class="errorForm" id="error-nombre-li" role="alert">Formato incorrecto para nombre a ingresado: ${nombre.value} </button>`
-                document.querySelector('#enviar').getAttribute("data-target")
-                document.querySelector('#enviar').setAttribute("data-target", "")
+            if(inputMensaje.value.length < 3){
+                
+            errorMensaje.innerHTML = 
+                `<button class="errorForm" id="error-mensaje-li" role="alert">
+                    Por favor comuniquenos el motivo de su contacto, Gracias !!
+                </button>`
+            buttonForm.getAttribute("data-target")
+            buttonForm.setAttribute("data-target", "")
+
+            }else if(regular.test(inputEmail.value) === false ){
+
+            errorEmail.innerHTML =
+                `<button class="errorForm" id="error-email-li" role="alert">
+                    Formato incorrecto para email a ingresado: ${inputEmail.value} 
+                </button>`
+            buttonForm.getAttribute("data-target")
+            buttonForm.setAttribute("data-target", "")
+
+            }else if(inputNombre.value.length < 3 ){
+             
+            errorNombre.innerHTML = 
+                `<button class="errorForm" id="error-nombre-li" role="alert">
+                    Formato incorrecto para nombre a ingresado: ${inputNombre.value} 
+                </button>`
+            buttonForm.getAttribute("data-target")
+            buttonForm.setAttribute("data-target", "")
+
             }else
             {
-                console.log('todo ok')
-                document.querySelector('#enviar').getAttribute("data-target")
-                document.querySelector('#enviar').setAttribute("data-target", "#exampleModal")
+                
+                buttonForm.getAttribute("data-target")
+                buttonForm.setAttribute("data-target", "#exampleModal")
             }
 
         })
