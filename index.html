@@ -16,23 +16,25 @@
 
 </head>
 <body>
-   <div class="padre text-center row border border-success rounded col-12 col-md-5 mx-auto gradiente">
-
+    <div class="padre text-center row border border-success rounded col-12 col-md-5 mx-auto gradiente">
+        <div class="col-6 text-center mx-auto">
+            <img src="./img/logo-sin-fondo.png" class="img-fluid mx-auto"  alt="Logo DesarrollaWeb.com">
+        </div>
             <!-- Formulario  -->
-    <form action="./gracias.html" method="GET" id="formulario"class="col-12 col-md-11 my-0 mx-auto" >
-        <fieldset class="row">
+    <form action="./gracias.html" method="GET" id="formulario"class="col-12  my-0 mx-auto" >
+        <fieldset class="row mx-auto">
             <div class="form-group col-md-12">
-                <label for="nombres" class="my-0 col-12">Nombre y Apellido</label>
+                <label for="nombres" class="my-0 col-12 mx-auto">Nombre y Apellido</label>
               <input aria-label="nombres" type="text" name="nombres" class="form-control nombres-Contact" id="nombres" placeholder="Nombre" required>
               <div id="errorNombre" class="form-group py-0" ></div>
             </div>
             <div class="form-group col-md-12">
-                <label for="email" class="my-0 col-12" >Correo Electrónico</label>
+                <label for="email" class="my-0 col-12 mx-auto" >Correo Electrónico</label>
               <input  type="email" name="email" class="form-control email-Contact" id="email" placeholder="Email" required>
               <div id="errorEmail" class="form-group py-0" ></div>
             </div>
             <div class="form-group col-md-12">
-                <label for="mensaje" class="my-0 col-12">Mensaje</label>
+                <label for="mensaje" class="my-0 col-12 mx-auto">Mensaje</label>
               <textarea aria-label="mensaje" rows="6" name="mensaje" class="form-control mensaje-Contact" id="mensaje" placeholder="Tu mensaje" value="" required></textarea>
               <div id="errorMensaje" class="form-group py-0" ></div>
             </div>
@@ -40,7 +42,9 @@
           </fieldset>
         <button id ="enviar" type="button" class="btn btn-success btn-block" data-toggle="modal" data-target="">Submit</button>
       </form>
-
+      <a href="https://desarrollaweb.com.ar/" target="_blank" class="mx-auto text-center text-success">
+        <span class="mx-auto text-center text-success"> Desarrollo web Accesible</span>
+        </a>
             <!-- Button trigger modal -->
 
   
